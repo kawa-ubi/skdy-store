@@ -8,6 +8,7 @@ class BooksController < ApplicationController
 
   # GET /books/1
   def show
+    @cart = {cart: {book_id: @book.id, customer_id: current_customer.id, quantity: 1}}
   end
 
   # GET /books/new

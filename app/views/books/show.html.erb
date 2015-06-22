@@ -45,5 +45,6 @@
   <%= @book.display_order %>
 </p>
 
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+<!--<%= link_to 'Edit', edit_book_path(@book) %>-->
+<%= link_to '戻る', books_path, href: 'javascript:history.back();', class: 'btn btn-success' %>
+<%= link_to 'カートに追加', carts_path(@cart), method: :post, class: 'btn btn-primary' %>

@@ -1,10 +1,12 @@
 class CartsController < ApplicationController
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_customer!
 
   respond_to :html
 
   def index
-    @carts = Cart.all
+    @carts = Cart.list current_customer.id
+    @total = Cart.total current_customer.id
     respond_with(@carts)
   end
 
@@ -23,7 +25,7 @@ class CartsController < ApplicationController
   def create
     @cart = Cart.new(cart_params)
     @cart.save
-    respond_with(@cart)
+    redirect_to controller: 'carts', action: 'index'
   end
 
   def update

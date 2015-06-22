@@ -22,3 +22,10 @@ main {
   width: 95%;
   margin-top: 51px;
 }
+
+.row:nth-child(even){
+  background-color: #eee;
+}
+.row:nth-child(odd){
+  background-color: #fff;
+}

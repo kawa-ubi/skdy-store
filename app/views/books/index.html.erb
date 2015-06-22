@@ -1,40 +1,38 @@
 <h1>Listing books</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Isbn</th>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Price</th>
-      <th>Category</th>
-      <th>Icon path</th>
-      <th>Picture path</th>
-      <th>Description</th>
-      <th>Display order</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div>
+  <div class="row">
+    <ul class="list-inline">
+      <li class="col-sm-2">Isbn</li>
+      <li class="col-sm-1">Title</li>
+      <li class="col-sm-1">Author</li>
+      <li class="col-sm-1">Price</li>
+      <li class="col-sm-1">Category</li>
+      <li class="col-sm-1">表紙</li>
+      <li class="col-sm-2">Description</li>
+      <li class="col-sm-3"></li>
+      <li class="col-sm-1"></li>
+    </ul>
+  </div>
 
-  <tbody>
-    <% @books.each do |book| %>
-      <tr>
-        <td><%= book.isbn %></td>
-        <td><%= book.title %></td>
-        <td><%= book.author %></td>
-        <td><%= book.price %></td>
-        <td><%= book.category %></td>
-        <td><%= book.icon_path %></td>
-        <td><%= book.picture_path %></td>
-        <td><%= book.description %></td>
-        <td><%= book.display_order %></td>
-        <td><%= link_to 'Show', book %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <% @books.each do |book| %>
+    <div class="row">
+      <ul class="list-inline">
+        <li class="col-sm-2"><%= book.isbn %></li>
+        <li class="col-sm-1"><%= book.title %></li>
+        <li class="col-sm-1"><%= book.author %></li>
+        <li class="col-sm-1"><%= book.price %></li>
+        <li class="col-sm-1"><%= book.category.name %></li>
+        <li class="col-sm-2"><img src="<%= book.icon_path %>" ></li>
+        <li class="col-sm-3"><%= book.description %></li>
+        <li class="col-sm-1"><%= link_to '詳細', book, class: 'btn btn-primary' %></li>
+        <!--<li class="col-sm-1"><%= link_to 'Edit', edit_book_path(book) %></li>-->
+        <!--<li class="col-sm-1"><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></li>-->
+      </ul>
+    </div>
+  <% end %>
+
+</div>
 
 <br>
 
