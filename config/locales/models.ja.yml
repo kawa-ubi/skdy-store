@@ -1,0 +1,47 @@
+ja:
+  activerecord:
+    models:
+      book: 書籍
+      cart: ショッピングカート
+      category: カテゴリー
+      customer: 顧客
+      manager: 管理者
+    attributes:
+      book:
+        isbn: ISBN
+        title: タイトル
+        author: 著者
+        price: 価格
+        category_id: カテゴリー
+        icon_path: アイコン
+        picture_path: 画像
+        description: 内容
+        display_order: 表示順
+        category_id: カテゴリー
+        created_at: 作成日時
+        updated_at: 更新日時
+      cart:
+        book_id: 書籍
+        customer_id: 顧客
+        quantity: 数量
+        created_at: 作成日時
+        updated_at: 更新日時
+      category:
+        name: 名前
+        display_order: 表示順
+        created_at: 作成日時
+        updated_at: 更新日時
+      customer:
+        name: 名前
+        password: パスワード
+        zip: 〒
+        address: 住所
+        tel: 電話
+        email: メール
+        created_at: 作成日時
+        updated_at: 更新日時
+      manager: 
+        name: 名前
+        email: メール
+        created_at: 作成日時
+        updated_at: 更新日時
