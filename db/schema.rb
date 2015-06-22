@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150622042331) do
+ActiveRecord::Schema.define(version: 20150622043150) do
 
   create_table "books", force: true do |t|
     t.string   "isbn"
@@ -28,6 +28,17 @@ ActiveRecord::Schema.define(version: 20150622042331) do
   end
 
   add_index "books", ["category_id"], name: "index_books_on_category_id"
+
+  create_table "carts", force: true do |t|
+    t.integer  "book_id"
+    t.integer  "customer_id"
+    t.integer  "quantity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "carts", ["book_id"], name: "index_carts_on_book_id"
+  add_index "carts", ["customer_id"], name: "index_carts_on_customer_id"
 
   create_table "categories", force: true do |t|
     t.string   "name"
