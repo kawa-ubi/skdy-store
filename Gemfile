@@ -41,3 +41,9 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass'
 
 gem 'devise'
+
+group :test do
+  gem 'rspec-rails'
+  gem 'factory_girl'
+  gem 'database_cleaner'
+end
