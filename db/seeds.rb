@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
 IMAGE_PATH = "/book_images"
 
 def create_books(category_name, tsv_file)
@@ -27,12 +19,10 @@ def create_books(category_name, tsv_file)
   puts "-- #{category_name}"
 end
 
-ActiveRecord::Base.connection.execute("SET FOREIGN_KEY_CHECKS=0")
 Book.delete_all
 Category.delete_all
-Customer.delete_all
-Manager.delete_all
-ActiveRecord::Base.connection.execute("SET FOREIGN_KEY_CHECKS=1")
+#Customer.delete_all
+#Manager.delete_all
 
 @category_order = 1
 create_books('文学', 'literature.tsv')
@@ -47,9 +37,9 @@ create_books('プログラミング', 'programing.tsv')
 create_books('絵本', 'picture_book.tsv')
 
 #
-Customer.create!(:name => '山田 太郎', :email => 'yama@book.com', :password => 'test1234',
-                 :password_confirmation => 'test1234',
-                 :zip => '101-0033', :address => '東京都渋谷区神山町1-1-1', :tel => '03-5555-1234')
-Manager.create!(:name => 'Mr.Admin', :email => 'admin@book.com', :password => 'test1234',
-                :password_confirmation => 'test1234'
-)
+#Customer.create!(:name => '山田 太郎', :email => 'yama@book.com', :password => 'test1234',
+#  :password_confirmation => 'test1234',
+#  :zip => '101-0033', :address => '東京都渋谷区神山町1-1-1', :tel => '03-5555-1234')
+#Manager.create!(:name => 'Mr.Admin', :email => 'admin@book.com', :password => 'test1234',
+#  :password_confirmation => 'test1234'
+#)
