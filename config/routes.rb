@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :books
 
-  resources :categories
+  resources :categories do
+    resources :books
+  end
 
   root :controller => 'books', :action => 'index'
 
