@@ -7,6 +7,7 @@ class CartsController < ApplicationController
   def index
     @carts = Cart.list current_customer.id
     @total = Cart.total current_customer.id
+    # @sub_total = Cart.sub_total current_customer.id
     respond_with(@carts)
   end
 
